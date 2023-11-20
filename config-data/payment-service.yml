@@ -15,7 +15,7 @@ spring:
       ddl-auto: update
 
 server:
-  port: 8091
+  port: 8083
 
   #Error Stack trace
   error:
