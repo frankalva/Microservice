@@ -1,0 +1,55 @@
+#DataSource Configuration Properties
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/urprovider?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC&useLegacyDateTimeCode=false
+    username: root
+    password: root
+
+
+  #Hibernate Configuration
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+    hibernate:
+      ddl-auto: update
+
+server:
+  port: 8093
+
+  #Error Stack trace
+  error:
+    include-stacktrace: never
+    include-message: always
+
+#Hibernate SQL Logging
+logging:
+  level:
+    hibernate:
+      SQL: DEBUG
+  org:
+    hibernate:
+      type: TRACE
+
+org:
+  springframework:
+    boot:
+      web:
+        server:
+          WebServerException: Unable
+
+#Eureka configuration
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8099/eureka/
+
+#Hystrix configuration
+Feign:
+  hystrix:
+    enabled: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
